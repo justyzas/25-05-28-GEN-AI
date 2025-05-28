@@ -1,6 +1,12 @@
 **8-Week Practical Course: Application Programming with GEN-AI and Python**
 
-----
+# Lecture Plan:
+## Lecture time: 17:30 - 19:55
+## 17:30 - 18:00 - Feedback + homework review
+## 18:00 - 18:50 - Theory in python + some examples
+## 18:50 - 19:00 - Break
+## 19:00 - 19:45 - Theory about GEN-AI
+## 19:45 - 19:55 - Summarize
 
 ## **Week 1: Python Foundations & Environment Setup**
 
