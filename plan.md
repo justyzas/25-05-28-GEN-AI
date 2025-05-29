@@ -60,3 +60,5 @@
   - **Variables**
   - **User input with `input()`**
   - **Conditional statements (`if`, `elif`, `else`)**
+
+### [Homework](https://github.com/justyzas/25-05-28-GEN-AI/blob/main/homework/2025-05-29.MD)
