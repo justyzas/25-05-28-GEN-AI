@@ -8,6 +8,7 @@
 ## 19:00 - 19:45 - Theory about GEN-AI
 ## 19:45 - 19:55 - Summarize
 
+
 ## **Week 1: Python Foundations & Environment Setup**
 
 ### **Day 1: Course Introduction & Environment Setup**

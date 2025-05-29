@@ -1,6 +1,12 @@
 **8 Savaičių Praktinis Kursas: Taikomųjų Programų Kūrimas su GEN-AI ir Python**
 
----
+# Paskaitu planas:
+### Paskaitos laikas: 17:30 - 19:55
+### **17:30 - 18:00** - *Klausimai, savarankisko darbo perziura*
+### **18:00 - 18:50** - *Teoriniai python pagrindai, keletas pavyzdziu*
+### **18:50 - 19:00** - *Pertrauka*
+### **19:00 - 19:45** - *Teorija apie GEN AI*
+### **19:45 - 19:55** - *Apibendrinimas*
 
 ## **1 Savaitė: Python Pagrindai ir Aplinkos Paruošimas**
 
