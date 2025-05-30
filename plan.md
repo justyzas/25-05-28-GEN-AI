@@ -65,11 +65,116 @@
 
 ## 📅 **Day 3**
 
-- Questions and Recap of Day 1
+- Questions and Recap of Day 2
 - Python operations with strings, numbers, introduction to lists
-- Python introduction to loops
-- Introduction to debugging applications
 
 - Discussing about GEN AI models
 - Gen AI models limitations
+
+#### 🔮 1. **Hallucination (Making Things Up)**
+- Gen AI models may **generate content that sounds plausible but is completely false**.
+- This includes:
+  - Incorrect facts
+  - Fake references
+  - Made-up URLs or studies
+- ⚠️ Critical in fields like medicine, law, or academia.
+
+#### 📅 2. **Lack of Real-Time or Recent Knowledge**
+- Most models are trained on **static data** with a **knowledge cutoff** (e.g., GPT-4 is trained up to late 2023).
+- They **do not access the internet** by default.
+- This makes them **unreliable for breaking news, live events, or up-to-date info**.
+
+---
+
+#### 🧠 3. **No True Understanding or Reasoning**
+- LLMs **do not think or understand** like humans.
+- They generate text based on **patterns and probabilities**, not logic or comprehension.
+- They may fail at:
+  - Multi-step logical problems
+  - Understanding ambiguous input
+  - Reasoning about cause and effect
+
+---
+
+#### 🧾 4. **Memory and Context Limitations**
+- Models have a **maximum context length** (e.g., 4k, 8k, 128k tokens).
+- If you input too much text, earlier content may be **truncated or forgotten**.
+- They do **not persist memory** between sessions unless designed with tools like memory APIs or databases.
+
+#### 🌍 5. **Bias and Toxicity**
+- Models are trained on **internet-scale data**, which includes **biases, stereotypes, and harmful language**.
+- They may:
+  - Reflect societal biases
+  - Reinforce stereotypes
+  - Generate offensive or inappropriate output if not carefully prompted or filtered
+
+### 6. It may fail on very simple and specific tasks, for example, counting 'r's in word "strawberry"
+
+### 7. It may fail in image generation while trying to add some text. Characters may seem distorted.
+
+### 8. Hosting LLM may seem very expensive in resources
+
+AI MODEL TYPES:
+
+
+🧠 1. Vision LLMs
+What They Do
+Process and understand images or visual input
+
+Combine language + vision to answer questions about pictures, describe images, or interact multimodally
+
+Typical Tasks
+Image captioning: “Describe this image”
+
+Visual question answering: “What’s the man holding in the picture?”
+
+Multimodal interaction: “Read the text in this screenshot and explain it”
+
+Examples in Ollama
+llava, bakllava, gpt-4o (if supported), blip, clip
+
+How They Differ
+These models expect an image as input, alongside or instead of text
+
+Cannot be used meaningfully for language-only tasks like embeddings
+
+---
+
+🛠️ 2. Tools LLMs
+What They Do
+LLMs configured to work with external tools, like:
+
+Calculators
+
+Web search
+
+Code execution
+
+APIs
+
+Typical Tasks
+“What’s 1249123 divided by 7.3?” → Calls a calculator tool
+
+“Get the current weather in Berlin” → Calls a weather API
+
+Agent workflows (multi-step reasoning)
+
+Examples in Ollama
+Tool-using variants of LLMs integrated with:
+
+LangChain
+
+AutoGPT-like flows
+
+Function-calling models
+
+How They Differ
+They don’t "know" the answers, they perform actions or call helpers
+
+May rely on additional code or environment (Ollama alone doesn’t handle tool execution natively — it serves the LLM; the toolchain is external)
+
+
+
+
+
 - Ollama model installation and running on local machine

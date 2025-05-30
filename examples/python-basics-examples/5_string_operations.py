@@ -9,7 +9,7 @@ name = "John"
 first = "John"
 last = "Doe"
 full = first + " " + last
-print(full)  # Output: John Doe
+print(full)  # Output: "JohnDoe"
 
 # 1.2 ➕ Concatenation using f-string (recommended modern way)
 another_full = f"{first} {last}"
@@ -59,8 +59,8 @@ print(message.replace("love", "like"))   # Output: I like Python
 
 # 4. 🍉 Splitting and 🧵 Joining
 data = "apple,banana,cherry"
-fruits = data.split(",")                 # ['apple', 'banana', 'cherry']
-joined = "-".join(fruits)                # 'apple-banana-cherry'
+fruits = data.split(",")                  # ['apple', 'banana', 'cherry']
+joined = ", ".join(fruits)                # 'apple, banana, cherry'
 
 print(fruits)
 print(joined)
@@ -68,4 +68,4 @@ print(joined)
 # 5. ✅ Checking Substrings
 s = "Welcome to Python"
 print("Python" in s)     # True
-print("Java" not in s)   # True
+print("Java" in s)   # False

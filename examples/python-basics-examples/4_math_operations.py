@@ -13,6 +13,7 @@ print(a - b)   # ➖ Subtraction: 7
 print(a * b)   # ✖️ Multiplication: 30
 print(a / b)   # ➗ Division: 3.333...
 
+print((a+b)*(a-b)) # the order of mathematical operations can be modified by ()
 # ----------------------------------------
 # ⚙️ 2. Integer Division and Modulo
 # ----------------------------------------
