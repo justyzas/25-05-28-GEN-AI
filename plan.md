@@ -62,3 +62,14 @@
   - **Conditional statements (`if`, `elif`, `else`)**
 
 ### [Homework](https://github.com/justyzas/25-05-28-GEN-AI/blob/main/homework/2025-05-29.MD)
+
+## 📅 **Day 3**
+
+- Questions and Recap of Day 1
+- Python operations with strings, numbers, introduction to lists
+- Python introduction to loops
+- Introduction to debugging applications
+
+- Discussing about GEN AI models
+- Gen AI models limitations
+- Ollama model installation and running on local machine
