@@ -63,7 +63,7 @@ dimensions = (1920, 1080)
 print(f"📺 Screen resolution: {dimensions[0]}x{dimensions[1]}")
 
 # ----------------------------------------
-# 🗃️ 7. Dictionary (key-value pairs)
+# 🗃️ 7. Dictionary/Object (key-value pairs)
 # ----------------------------------------
 
 person = {
