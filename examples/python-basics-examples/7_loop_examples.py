@@ -14,10 +14,11 @@ for i in range(1, 6):
 # ----------------------------------------
 
 fruits = ["apple", "banana", "cherry"]
-
+fruits_upper = []
 print("🍓 Fruits in the basket:")
 for fruit in fruits:
-    print("-", fruit)
+    fruit_upper = fruit.upper()
+    fruits_upper.append(fruit_upper)
 
 # ----------------------------------------
 # 🔁 3. While Loop Example
@@ -40,7 +41,7 @@ movies = []
 while True:
     movie = input("Movie: ")
     if movie.lower() == "done":
-        break
+        break # break makes a loop go stop
     movies.append(movie)
 
 print("🎬 Your movies:", movies)

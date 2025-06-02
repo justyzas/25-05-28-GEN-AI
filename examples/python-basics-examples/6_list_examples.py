@@ -42,7 +42,6 @@ print("Last fruit:", fruits[-1])
 print("🍓 All fruits in the list:")
 for fruit in fruits:
     print("-", fruit)
-
 # ----------------------------------------
 # 🔢 6. List Length
 # ----------------------------------------
@@ -82,6 +81,7 @@ print("Last two numbers:", numbers[-2:])
 # ----------------------------------------
 
 copied_fruits = fruits.copy()
+copied_fruits.append("Obuolys")
 print("Copied fruits:", copied_fruits)
 
 # ----------------------------------------

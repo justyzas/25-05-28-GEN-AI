@@ -163,4 +163,92 @@ LLMs configured to work with **external tools**, like:
 - May rely on **additional code or environment**.
   - Ollama **doesn’t handle tool execution** natively — it **serves the LLM**; the toolchain is external.
 
+  ---
+
+### 🧠 3. **Language LLMs (Text-only Models)**
+
+#### 🔍 What They Do:
+These are the most common LLMs — trained to **understand and generate human-like language**.
+
+#### 📌 Typical Tasks:
+- Chatbots and virtual assistants  
+- Code generation and debugging  
+- Summarization, translation, rewriting  
+- Creative writing or brainstorming
+
+#### 🧪 Examples in Ollama:
+- `llama3`, `mistral`, `gemma`, `phi`, `tinyllama`
+
+#### ⚙️ How They Differ:
+- Work only with **text input and output**.
+- Great for general-purpose use, but **not multimodal** (can’t process images).
+- Often the most optimized and resource-efficient models in Ollama.
+
+---
+
+### 🧩 4. **Embedding Models**
+
+#### 🔍 What They Do:
+These models **convert text into vectors (embeddings)** — numerical representations that capture semantic meaning.
+
+#### 📌 Typical Tasks:
+- Semantic search (e.g., “find documents similar to this query”)  
+- Clustering similar texts  
+- Vector databases (e.g., Pinecone, FAISS)  
+- Text classification and similarity scoring
+
+#### 🧪 Examples in Ollama:
+- Embedding variants of `mistral`, `bge`, or smaller transformer-based models
+
+#### ⚙️ How They Differ:
+- They don’t generate language like a chatbot.
+- Their job is **representational** — not conversational.
+- Output is a **vector of numbers**, not words or sentences.
+
+---
+
 - **Ollama model installation** and **running** on **local machine**
+
+
+## 📅 **Day 4: Lists, Loops & Prompt Engineering**
+
+---
+
+### 🔁 **Topics Covered**
+
+- ✅ Recap of Day 3
+- 📝 Review of Homework
+- 📋 Working with **Lists**:
+  - Creating and accessing elements
+  - Slicing syntax (`list[start:stop:step]`)
+  - Common methods: `.append()`, `.remove()`, `.sort()`, etc.
+- 🐞 **Python Debugging**:
+  - Using `print()` statements
+  - Using breakpoints in VS Code
+- 🔁 **Loops**:
+  - `for` and `while` loops
+  - Looping through lists and ranges
+  - `break`
+
+---
+
+### 🧠 **Key Terms & Concepts**
+
+- **Token**  
+  The smallest unit into which text data can be broken down for an AI model to process.
+
+- 💰 **Token Cost Tip**  
+  *Input is often cheaper than output* — models charge less to receive a prompt than to generate a response.
+
+- **Prompt Engineering**  
+  A skill and practice for designing, refining, and optimizing **prompts** to effectively guide large language models (LLMs) in performing tasks or answering questions.  
+  Useful for:
+  - Improving accuracy
+  - Reducing hallucinations
+  - Enhancing creative output
+
+- **API Key**  
+  A **secret identifier** used to authenticate with an external API service (e.g., OpenAI, Hugging Face).  
+  ⚠️ **CAUTION:** Never share your API key publicly — it can be misused and expose you to unwanted costs.
+
+---
