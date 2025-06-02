@@ -114,67 +114,53 @@
 
 ### 8. Hosting LLM may seem very expensive in resources
 
-AI MODEL TYPES:
-
-
-🧠 1. Vision LLMs
-What They Do
-Process and understand images or visual input
-
-Combine language + vision to answer questions about pictures, describe images, or interact multimodally
-
-Typical Tasks
-Image captioning: “Describe this image”
-
-Visual question answering: “What’s the man holding in the picture?”
-
-Multimodal interaction: “Read the text in this screenshot and explain it”
-
-Examples in Ollama
-llava, bakllava, gpt-4o (if supported), blip, clip
-
-How They Differ
-These models expect an image as input, alongside or instead of text
-
-Cannot be used meaningfully for language-only tasks like embeddings
+## 🤖 **AI Model Types**
 
 ---
 
-🛠️ 2. Tools LLMs
-What They Do
-LLMs configured to work with external tools, like:
+### 🧠 1. **Vision LLMs**
 
-Calculators
+#### 🔍 What They Do:
+- Process and understand **images or visual input**.
+- Combine **language + vision** to answer questions about pictures, describe images, or interact **multimodally**.
 
-Web search
+#### 📌 Typical Tasks:
+- **Image captioning**: “Describe this image.”
+- **Visual question answering**: “What’s the man holding in the picture?”
+- **Multimodal interaction**: “Read the text in this screenshot and explain it.”
 
-Code execution
+#### 🧪 Examples in Ollama:
+- `llava`, `bakllava`, `gpt-4o` (if supported), `blip`, `clip`
 
-APIs
+#### ⚙️ How They Differ:
+- Expect an **image as input**, alongside or instead of text.
+- Cannot be used meaningfully for **language-only tasks** like embeddings.
 
-Typical Tasks
-“What’s 1249123 divided by 7.3?” → Calls a calculator tool
+---
 
-“Get the current weather in Berlin” → Calls a weather API
+### 🛠️ 2. **Tools LLMs**
 
-Agent workflows (multi-step reasoning)
+#### 🔍 What They Do:
+LLMs configured to work with **external tools**, like:
+- Calculators  
+- Web search  
+- Code execution  
+- APIs  
 
-Examples in Ollama
-Tool-using variants of LLMs integrated with:
+#### 📌 Typical Tasks:
+- “What’s 1249123 divided by 7.3?” → Calls a **calculator tool**
+- “Get the current weather in Berlin” → Calls a **weather API**
+- **Agent workflows** (multi-step reasoning)
 
-LangChain
+#### 🧪 Examples in Ollama:
+- Tool-using variants of LLMs integrated with:
+  - **LangChain**
+  - **AutoGPT-like flows**
+  - **Function-calling models**
 
-AutoGPT-like flows
+#### ⚙️ How They Differ:
+- They don’t “know” the answers — they **perform actions or call helpers**.
+- May rely on **additional code or environment**.
+  - Ollama **doesn’t handle tool execution** natively — it **serves the LLM**; the toolchain is external.
 
-Function-calling models
-
-How They Differ
-They don’t "know" the answers, they perform actions or call helpers
-
-May rely on additional code or environment (Ollama alone doesn’t handle tool execution natively — it serves the LLM; the toolchain is external)
-
-
-
-
-
-- Ollama model installation and running on local machine
+- **Ollama model installation** and **running** on **local machine**
