@@ -1,23 +1,23 @@
 # 📅 Python Date and Time Operations
 # This script demonstrates how to work with dates and times in Python using the datetime module.
 
-from datetime import datetime, date, time, timedelta
+import datetime as dt
 
 # ----------------------------------------
 # 🕒 Getting Current Date and Time
 # ----------------------------------------
 
 # 1️⃣ Get current date and time
-now = datetime.now()
+now = dt.datetime.now()
 print(now)  # e.g., 2025-06-02 14:30:00.123456
 
 # 2️⃣ Get only current date
 # today = date.today()
-today = datetime.today()
+today = dt.date.today()
 print(today)  # e.g., 2025-06-02
 
 # 3️⃣ Get only current time
-current_time = datetime.now().time()
+current_time = dt.datetime.now().time()
 print(current_time)  # e.g., 14:30:00.123456
 
 # ----------------------------------------
@@ -25,15 +25,15 @@ print(current_time)  # e.g., 14:30:00.123456
 # ----------------------------------------
 
 # 4️⃣ Create a specific date
-birthday = date(1990, 5, 17)
+birthday = dt.date(year=1999, day=9, month=12)
 print(birthday)
 
 # 5️⃣ Create a specific time
-lunch_time = time(12, 30)
+lunch_time = dt.time(12, 30)
 print(lunch_time)
 
 # 6️⃣ Create a full datetime
-meeting = datetime(2025, 6, 15, 9, 0)
+meeting = dt.datetime(2025, 6, 15, 9, 0, 26, 585)
 print(meeting)
 
 # ----------------------------------------
@@ -41,14 +41,14 @@ print(meeting)
 # ----------------------------------------
 
 # 7️⃣ Add or subtract time
-tomorrow = today + timedelta(days=1)
-yesterday = today - timedelta(days=1)
+tomorrow = today + dt.timedelta(days=1)
+yesterday = today - dt.timedelta(days=1)
 print(tomorrow)
 print(yesterday)
 
 # 8️⃣ Difference between dates
 delta = tomorrow - today
-print(delta.days)  # 1
+print(delta.days)  # 24
 
 # ----------------------------------------
 # ⏱ Formatting and Parsing
@@ -69,8 +69,8 @@ formatted = now.strftime("%Y-%m-%d %H:%M:%S")
 print(formatted)  # e.g., "2025-06-02 14:30:00"
 
 # 🔟 Parse string to datetime
-date_str = "2025-06-02 14:30:00"
-parsed = datetime.strptime(date_str, "%Y-%m-%d %H:%M:%S")
+date_str = "2025/06-02 14:30:00"
+parsed = dt.datetime.strptime(date_str, "%Y/%m-%d %H:%M:%S")
 print(parsed)
 
 # ----------------------------------------
