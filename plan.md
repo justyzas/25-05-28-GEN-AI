@@ -296,4 +296,4 @@ These models **convert text into vectors (embeddings)** — numerical representa
 - 🧑‍💻 Optional: Sending prompts to local LLM
 
 - **Zero-shot Prompting**  
-  Asking the model to do a task **without showing examples** — relies on general instructions.
+  Asking the model to do a task **without showing examples** — relies on general instructions, that model learned in the training.

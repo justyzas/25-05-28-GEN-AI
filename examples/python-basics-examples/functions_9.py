@@ -15,6 +15,7 @@ def say_hello():
 # say_hello()  # Output: Hello!
 
 
+
 # 2️⃣ Function with parameters
 def greet(name):
     print(f"Hi, {name}!")
