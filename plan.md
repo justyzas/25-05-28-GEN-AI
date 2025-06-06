@@ -297,3 +297,7 @@ These models **convert text into vectors (embeddings)** — numerical representa
 
 - **Zero-shot Prompting**  
   Asking the model to do a task **without showing examples** — relies on general instructions, that model learned in the training.
+
+- **Few-shot Prompting**
+
+## 📅 **Day 7: Dates, Functions & Prompt Engineering & first AI call via API**

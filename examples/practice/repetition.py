@@ -30,16 +30,17 @@ average = sum_of_prices / items_count
 
 
 # how_many_items_expensive = sum(1 for x in price_list if x > 10)
+
+# List example:
+# sum_list = [1 for x in price_list if x > 10]
+# print(sum_list)
+ 
 how_many_items_expensive = 0
 
 for x in price_list:
     if x > 10:
         how_many_items_expensive += 1
 
-print(how_many_items_expensive)
-
 print(f"Total: {sum_of_prices}\nAverage: {round(average, 2)}\nItems over $10: {how_many_items_expensive}")
-# sum_list = [1 for x in price_list if x > 10]
-# print(sum_list)
- 
+
 

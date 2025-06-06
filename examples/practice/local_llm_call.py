@@ -13,5 +13,5 @@ response = requests.post(
     }
 )
 
-# print(response.json()["response"])
-print(response.json()['message']['content'])
+# print(response.json())
+print(response.json()['symbol'])
