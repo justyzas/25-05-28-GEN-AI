@@ -301,3 +301,5 @@ These models **convert text into vectors (embeddings)** — numerical representa
 - **Few-shot Prompting**
 
 ## 📅 **Day 7: Dates, Functions & Prompt Engineering & first AI call via API**
+
+## 📅 **Day 8: Repeating, using LLM to answer only in certain fields. Using LLM for analysis**
