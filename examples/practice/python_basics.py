@@ -13,8 +13,10 @@ if age >= 20:
     print("Prasome imkite alaus")#only gets printed if age is more or equal than 20
     print("Prasome imkite alaus")
     print("Prasome imkite alaus")
+
+
 elif age >= 18:
-    print("Prasome imkite energetinio")#only gets printed if age is 18 or 19
+    print("Prasome imkite energetinio") #only gets printed if age is 18 or 19
 else:
-    print("Prasome imkite saldaini")#only gets printed if age is under 18 (all the other cases not defined in earlier if blocks)
+    print("Prasome imkite saldaini") #only gets printed if age is under 18 (all the other cases not defined in earlier if blocks)
 

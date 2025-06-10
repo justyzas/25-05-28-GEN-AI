@@ -303,3 +303,11 @@ These models **convert text into vectors (embeddings)** — numerical representa
 ## 📅 **Day 7: Dates, Functions & Prompt Engineering & first AI call via API**
 
 ## 📅 **Day 8: Repeating, using LLM to answer only in certain fields. Using LLM for analysis**
+
+## 📅 **Day 9: Intro to Embedding LLM's, Vector databases.**
+
+- Python environments
+- Identation of python repeated
+- Introduction to vector data
+- Semantic search via Embedding LLM's
+- Introduction to numpy
