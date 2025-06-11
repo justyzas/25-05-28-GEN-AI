@@ -311,3 +311,20 @@ These models **convert text into vectors (embeddings)** — numerical representa
 - Introduction to vector data
 - Semantic search via Embedding LLM's
 - Introduction to numpy
+
+## 📅 **Day 10: Intro to, Vector databases. Persisting embeddings along with text**
+
+- Vector databases, why we need them:
+  - Quick search
+  - Semantic search
+  - Search by embeddings, by texts, by metadata
+  - Create entries and search with some inacurracies and still find relevant data
+  - Great storage and compactness with great speeds.
+  - Long term vector storage (no need to call LLM to embed it again (which costs a lot!))
+- Got to know about Chroma database
+- Made upsertions to a virtual in-memory database
+- Made insertions to a persistent file persistent vector database
+- Made a semantic search in a file persistent vector database
+- Vector databases should only store embeddings from one source
+
+---

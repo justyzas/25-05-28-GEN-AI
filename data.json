@@ -1,0 +1,12 @@
+{
+	"ids": [["id2", "id1"]],
+	"embeddings": null,
+	"documents": [
+		["This is a document about oranges", "This is a document about pineapple"]
+	],
+	"uris": null,
+	"included": ["metadatas", "documents", "distances"],
+	"data": null,
+	"metadatas": [[null, null]],
+	"distances": [[1.1462137699127197, 1.3015384674072266]]
+}
