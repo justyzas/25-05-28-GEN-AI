@@ -27,3 +27,13 @@ def get_embeddings(texts: list[str]):
     )
     embedding_objects_list = response.data
     return [eo.embedding for eo in embedding_objects_list]
+
+
+# response.data = [
+#     embedding1,
+#     embedding2,
+#     ...
+#     embeddingN
+# ]
+
+# embeddingX = [1.054616, 0.8765416, .... N]
