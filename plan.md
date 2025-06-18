@@ -419,3 +419,16 @@ This file documents the evolution of our vector database learning examples using
 - Building a simple Streamlit or Flask UI
 
 ---
+
+# Lecture 14. Agentic systems
+
+- Can hallucinate (make up information)
+- Can make inappropriate decisions based on incorrect context
+- When using agent systems, people don't improve or don't see the need to improve
+- There can be security vulnerabilities due to the LLMs themselves (API keys, secret tokens, etc.)
+- More expensive than chatting with LLM
+- More expensive in terms of resources
+- Agent systems don't follow project requirements. They need to be described separately.
+
+
+ These points outline various limitations and concerns about using AI agent systems, including issues with reliability, cost, security, and project management considerations.

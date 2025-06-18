@@ -12,7 +12,7 @@ user_query = input("Please ask for some information about driving: ")
 # Ši funkcija iškviečia OpenAI text-embedding-3-small
 user_query_embedded = em.get_embedding(user_query)
 
-results = collection.query(query_embeddings=[user_query_embedded], n_results=2)
+results = collection.query(query_embeddings=[user_query_embedded], n_results=9)
 
 print(results["documents"])
 print(results["distances"])

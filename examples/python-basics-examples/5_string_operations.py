@@ -37,14 +37,14 @@ print(word2_length)  # Output: 5
 # ----------------------------------------
 
 # 1. 🔠 Case Conversion
-greeting = "hello world"
+greeting = "hello world. my name is Justinas"
 
 greeting_upper = greeting.upper()        # "HELLO WORLD"
 greeting_lower = greeting_upper.lower()  # "hello world"
 greeting_title = greeting_upper.title()  # "Hello World"
 greeting_capitalize = greeting.capitalize()  # "Hello world"
 
-print(greeting_upper)  # Output: HELLO WORLD
+print(greeting_capitalize)  # Output: HELLO WORLD
 
 # 2. ✂️ Trimming Whitespace (removing spaces from the beginning/end)
 not_clean_string = "  hello world  "
