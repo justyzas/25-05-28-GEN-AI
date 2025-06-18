@@ -3,78 +3,91 @@ from openai import OpenAI
 from dotenv import load_dotenv
 from rich import print
 from dispatcher import execute
-# result = sum(4, 4.8) 
-# print(result) 
-
-sum_function_definition = {
-    "name": "sum",
-    "description": "Adds two numbers together",
-    "parameters":{
-        "type": "object",
-        "properties": {
-            "a": { "type" : "number", "desciption": "The first number"},
-            "b": { "type" : "number", "desciption": "The second number"}
-        },
-        "required": ["a", "b"] 
-    }
-}
-uppercase_function_definition = {
-    "name": "uppercase",
-    "description": "Makes a text to uppercase",
-    "parameters":{
-        "type": "object",
-        "properties": {
-            "text": { "type" : "string", "desciption": "The text to be uppercased"},
-        },
-        "required": ["text"] 
-    }
-}
-
-
+import json
 
 load_dotenv()
-token = os.getenv("GH_API_TOKEN")
-endpoint = "https://models.github.ai/inference"
-model = "openai/gpt-4.1-mini"
+
+# GEN AI Params
+API_KEY = os.getenv("GH_API_TOKEN")
+PLATFORM_ENDPOINT = "https://models.github.ai/inference"
+MODEL = "openai/gpt-4.1-mini"
+# Other Params
+EXIT_KEYWORDS = ["exit", "end", "finish", "bye", "stop"]
 
 
-client = OpenAI(base_url=endpoint, api_key=token)
+client = OpenAI(base_url=PLATFORM_ENDPOINT, api_key=API_KEY)
+messages = [{"role": "system", "content": "If you get prompted for math, please use the provided tools.\nIf you get prompted with math, please give the answer in this format \"The answer to question {question}, is: \""}]
 
+# functions definition:
+functions_def = [
+    {
+        "type": "function",
+        "function": {
+            "name": "sum",
+            "description": "Adds two numbers together",
+            "parameters":{
+                "type": "object",
+                "properties": {
+                    "a": { "type" : "number", "description": "The first number"},
+                    "b": { "type" : "number", "description": "The second number"}
+                },
+                "required": ["a", "b"] 
+            }
+        }
+    },
+    {
+        "type": "function",
+        "function": {
+            "name": "uppercase",
+            "description": "Makes a text to uppercase",
+            "parameters":{
+                "type": "object",
+                "properties": {
+                    "text": { "type" : "string", "description": "The text to be uppercased"},
+                },
+                "required": ["text"] 
+            }
+        }
+    }
+]
 
-response = client.chat.completions.create(
-    model=model,
-    messages=[
-        {"role": "system", "content": "If you get prompted for math, please use the provided tools.\nIf you get prompted with math, please give the answer in this format \"The answer to question {question}, is: \""}, 
-        {"role": "user", "content": "What is 23.5 + 6.5"}
-    ],
-    temperature=0.7,
-    tools=[{"type": "function", "function": sum_function_definition }],
-    tool_choice="auto"
-)
+while True:
+    prompt = input("User: ").strip()
+    if prompt.lower() in EXIT_KEYWORDS:
+        break
 
+    messages.append({"role": "user", "content": prompt})
 
-tool_calls = response.choices[0].message.tool_calls
-
-# Checks if any tools were called
-if len(tool_calls) != 0:
-    # Picks the first tool from the list
-    tool_call = tool_calls[0].function
-    # executes the tool function
-    result = execute(tool_call)
-    # Then prints the result
-    print(f"[green]{result}[/green]")
-
-if result != None:
     response = client.chat.completions.create(
-    model=model,
-    messages=[
-        {"role": "system", "content": "If you get prompted for math, please use the provided tools.\nIf you get prompted with math, please give the answer in this format \"The answer to question {question}, is: \""}, 
-        {"role": "user", "content": "What is 23.5 + 6.5"},
-        {"role": "assistant", "content": f" the result is: \"{result}\""}
-    ],
-    temperature=0.7,
-    tools=[{"type": "function", "function": sum_function_definition }],
-    tool_choice="auto"
-)
-print(response)
+        model=MODEL,
+        messages=messages,
+        temperature=0.7,
+        tools=functions_def,
+        tool_choice="auto"
+    )
+
+    tool_calls = response.choices[0].message.tool_calls
+    if tool_calls != None and len(tool_calls) != 0:
+        # Tools execution
+        for tool_call in tool_calls:
+            args = json.loads(tool_call.function.arguments)
+            result = execute(tool_call.function.name, **args)
+            messages.append({"role": "assistant", "tool_calls": [tool_call]})
+            messages.append({"role": "tool", "tool_call_id": tool_call.id, "content": str(result)})
+
+        # Second call since tools finished their job
+        response = client.chat.completions.create(
+            model=MODEL,
+            messages=messages,
+            temperature=0.7,
+            tools=functions_def,
+            tool_choice="auto"
+        )
+    response_message = response.choices[0].message.content
+
+    print(f"[green]AI: {response_message}[/green]")
+    
+
+    
+
 

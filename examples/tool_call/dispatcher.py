@@ -1,13 +1,8 @@
 from tools import sum, uppercase
 
-import json
 
-def execute(functionEx):
-    print(functionEx)
-
-    args = json.loads(functionEx.arguments)
-
-    if functionEx.name == "sum":
-        return sum(**args)
-    elif functionEx.name == "uppercase":
-        return uppercase(**args)
+def execute(name: str, **kwargs):
+    if name == "sum":
+        return sum(**kwargs)
+    elif name == "uppercase":
+        return uppercase(**kwargs)
