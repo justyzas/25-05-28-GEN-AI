@@ -2,9 +2,9 @@ import os
 from openai import OpenAI
 from dotenv import load_dotenv
 from rich import print
-from dispatcher import execute
 import json
 
+from tools import get_weather_definition, get_weather
 load_dotenv()
 
 # GEN AI Params
@@ -12,47 +12,17 @@ API_KEY = os.getenv("GH_API_TOKEN")
 PLATFORM_ENDPOINT = "https://models.github.ai/inference"
 MODEL = "openai/gpt-4.1-mini"
 # Other Params
-EXIT_KEYWORDS = ["exit", "end", "finish", "bye", "stop"]
+EXIT_KEYWORDS = ["exit", "end", "finish", "bye", "stop", "byebye"]
 
 
 client = OpenAI(base_url=PLATFORM_ENDPOINT, api_key=API_KEY)
-messages = [{"role": "system", "content": "If you get prompted for math, please use the provided tools.\nIf you get prompted with math, please give the answer in this format \"The answer to question {question}, is: \""}]
 
-# functions definition:
-functions_def = [
-    {
-        "type": "function",
-        "function": {
-            "name": "sum",
-            "description": "Adds two numbers together",
-            "parameters":{
-                "type": "object",
-                "properties": {
-                    "a": { "type" : "number", "description": "The first number"},
-                    "b": { "type" : "number", "description": "The second number"}
-                },
-                "required": ["a", "b"] 
-            }
-        }
-    },
-    {
-        "type": "function",
-        "function": {
-            "name": "uppercase",
-            "description": "Makes a text to uppercase",
-            "parameters":{
-                "type": "object",
-                "properties": {
-                    "text": { "type" : "string", "description": "The text to be uppercased"},
-                },
-                "required": ["text"] 
-            }
-        }
-    }
-]
+messages = [{"role": "system", "content": "You are a helpful assistant. You answer only questions about the weather. You should not expand too much, just focus on the information you get from tools"}]
+
 
 while True:
     prompt = input("User: ").strip()
+
     if prompt.lower() in EXIT_KEYWORDS:
         break
 
@@ -61,33 +31,29 @@ while True:
     response = client.chat.completions.create(
         model=MODEL,
         messages=messages,
-        temperature=0.7,
-        tools=functions_def,
+        tools=[get_weather_definition],
         tool_choice="auto"
     )
-
     tool_calls = response.choices[0].message.tool_calls
-    if tool_calls != None and len(tool_calls) != 0:
-        # Tools execution
-        for tool_call in tool_calls:
-            args = json.loads(tool_call.function.arguments)
-            result = execute(tool_call.function.name, **args)
-            messages.append({"role": "assistant", "tool_calls": [tool_call]})
-            messages.append({"role": "tool", "tool_call_id": tool_call.id, "content": str(result)})
 
-        # Second call since tools finished their job
+    if tool_calls != None:
+        tool_call = tool_calls[0]
+        city = json.loads(tool_call.function.arguments)["city"]
+
+        tool_response = get_weather(city)
+        tool_response_as_text = json.dumps(tool_response)
+
+        messages.append({"role": "assistant", "tool_calls": [tool_call]})
+        messages.append({"role": "tool", "tool_call_id": tool_call.id,
+                        "content": str(tool_response_as_text)})
+
         response = client.chat.completions.create(
             model=MODEL,
             messages=messages,
-            temperature=0.7,
-            tools=functions_def,
+            tools=[get_weather_definition],
             tool_choice="auto"
         )
-    response_message = response.choices[0].message.content
 
-    print(f"[green]AI: {response_message}[/green]")
-    
+    chatbot_response = response.choices[0].message.content
 
-    
-
-
+    print(f"[green]AI: [/green] {chatbot_response}")
