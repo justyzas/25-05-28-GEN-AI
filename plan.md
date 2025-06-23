@@ -419,3 +419,19 @@ This file documents the evolution of our vector database learning examples using
 - Building a simple Streamlit or Flask UI
 
 ---
+
+### DAY 13: Repeating process
+
+- `venv` What it is, how to work with it? how to set it? requirements.txt.
+ + `python -m venv virtual-env` - Virtual environment creation, it's name will be `virtual-env`
+ + To activate python environment, you should press: `CTRL` + `SHIFT` + `P`. Then select an option `Python: Select Interpreter`. Currently active environment will be written down in a text field
+ + To create a `requirements.txt` use a command: `pip freeze > requirements.txt`
+ + To install the packages from `requirements.txt` to a currently active environment, you should run this command: `pip install -r requirements.txt`
+
+- Parsing responses from structured `dictionaries` (`objects`)
+  + `rich` library
+
+  ---
+  
+- Embeddings, how to parse them from Vector DB
+- Vector databases (memory, files)

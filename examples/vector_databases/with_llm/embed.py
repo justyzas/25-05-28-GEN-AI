@@ -12,6 +12,7 @@ client = OpenAI(
     api_key=token,
 )
 
+# Gauname viena embedding is embedding LLM'o
 def get_embedding(text: str):
     response = client.embeddings.create(
     input=text,
@@ -19,7 +20,7 @@ def get_embedding(text: str):
     )
     return response.data[0].embedding
 
-
+# Gauname kelis embedding'us is embedding LLM'o
 def get_embeddings(texts: list[str]):
     response = client.embeddings.create(
     input=texts,

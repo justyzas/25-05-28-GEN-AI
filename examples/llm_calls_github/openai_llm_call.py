@@ -1,6 +1,7 @@
 import os
 from openai import OpenAI
 from dotenv import load_dotenv
+from rich import print
 
 load_dotenv()
 token = os.getenv("GH_API_TOKEN")
@@ -28,4 +29,6 @@ response = client.chat.completions.create(
     model=model
 )
 
-print(response.choices[0].message.content)
+print(response.id)
+hate_severity = response.choices[0].content_filter_results["hate"]["severity"]
+print(f"hate severity: {hate_severity}")
