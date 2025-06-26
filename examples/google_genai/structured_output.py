@@ -39,4 +39,6 @@ print(response.text)
 
 # Pagal paduotą schemą sugeneruotas JSON atsakas
 my_recipes: list[Recipe] = response.parsed
-print(my_recipes)
+
+# Pirmojo recepto pavadinimas
+print(my_recipes[0].recipe_name)

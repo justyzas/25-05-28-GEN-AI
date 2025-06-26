@@ -1,5 +1,5 @@
 from google import genai
-from google.genai import types
+from google.genai import types # Tipai, skirti nestandartiniams inputams
 
 from dotenv import load_dotenv
 import os
@@ -25,6 +25,7 @@ def sum(a:float, b:float):
 #             }
 #         }
 #     }
+
 sum_definition = types.FunctionDeclaration(
     name="sum",
     description="Adds two numbers together",
