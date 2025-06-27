@@ -1,0 +1,257 @@
+[
+    {
+        "seller_name": "UAB ŠILUTĖS PREKYBA",
+        "total_discount": 1.4,
+        "price_without_vat": 12.78,
+        "total": 15.56,
+        "date": "2025-04-05",
+        "payment_method": "CREDIT",
+        "products": [
+            {
+                "name": "Druska gyvulinė gabalais po 10 Kg",
+                "quantity": null,
+                "price": 5.09
+            },
+            {
+                "name": "Druska gyvulinė gabalais po 10 Kg",
+                "quantity": null,
+                "price": 2.09
+            },
+            {
+                "name": "plus ŠNEKORIŲ Tamsus 6,0 % 1l",
+                "quantity": null,
+                "price": 2.09
+            },
+            {
+                "name": "Plastmasinė pripildyta pakuotė",
+                "quantity": null,
+                "price": 0.1
+            },
+            {
+                "name": "Karamelė Roshen Menthol Eucal",
+                "quantity": null,
+                "price": 0.1
+            },
+            {
+                "name": "Unknown (1,000 kg)",
+                "quantity": 1.0,
+                "price": 4.59
+            }
+        ]
+    },
+    {
+        "seller_name": "UAB \"BALTIC PETROLEUM\"",
+        "total_discount": 2.99,
+        "price_without_vat": 47.92,
+        "total": 57.98,
+        "date": "2025-01-06",
+        "payment_method": "CREDIT",
+        "products": [
+            {
+                "name": "EKO dizelinas 3G",
+                "quantity": 1.0,
+                "price": 60.97
+            }
+        ]
+    },
+    {
+        "seller_name": "MB \"MJ Klinika\"",
+        "total_discount": 0.0,
+        "price_without_vat": 85.0,
+        "total": 85.0,
+        "date": "2025-01-06",
+        "payment_method": "CREDIT",
+        "products": [
+            {
+                "name": "Panoraminė rentgeno nuotrauka",
+                "quantity": 1.0,
+                "price": 20.0
+            },
+            {
+                "name": "Profesionali burnos higiena",
+                "quantity": 1.0,
+                "price": 65.0
+            }
+        ]
+    },
+    {
+        "seller_name": "Laudenta, UAB",
+        "total_discount": 0.0,
+        "price_without_vat": 12.01,
+        "total": 14.83,
+        "date": "2025-06-24",
+        "payment_method": "CREDIT",
+        "products": [
+            {
+                "name": "PREKES",
+                "quantity": null,
+                "price": 3.11
+            },
+            {
+                "name": "PREKES",
+                "quantity": null,
+                "price": 1.79
+            },
+            {
+                "name": "PREKES",
+                "quantity": 3.0,
+                "price": 1.1
+            },
+            {
+                "name": "DEPOZITAS",
+                "quantity": null,
+                "price": 0.3
+            },
+            {
+                "name": "PREKES",
+                "quantity": 3.0,
+                "price": 0.29
+            },
+            {
+                "name": "PREKES",
+                "quantity": 2.0,
+                "price": 0.65
+            },
+            {
+                "name": "PREKES",
+                "quantity": null,
+                "price": 0.5
+            },
+            {
+                "name": "PREKES",
+                "quantity": null,
+                "price": 0.85
+            }
+        ]
+    },
+    {
+        "seller_name": "IKI Lietuva, UAB",
+        "total_discount": 4.4,
+        "price_without_vat": 15.38,
+        "total": 18.61,
+        "date": "2025-06-26",
+        "payment_method": "CASH",
+        "products": [
+            {
+                "name": "APELSINAI DIDIEJI",
+                "quantity": null,
+                "price": 4.06
+            },
+            {
+                "name": "Bulvės rusu sk. kg",
+                "quantity": null,
+                "price": 1.81
+            },
+            {
+                "name": "Fantazija IKI salotų su SODU",
+                "quantity": null,
+                "price": 2.97
+            },
+            {
+                "name": "Nugarinė pjaustyta IKI",
+                "quantity": null,
+                "price": 1.53
+            },
+            {
+                "name": "JUODASIS SU VYNUOGĖMI GABALAI",
+                "quantity": null,
+                "price": 0.1
+            },
+            {
+                "name": null,
+                "quantity": null,
+                "price": 1.04
+            },
+            {
+                "name": null,
+                "quantity": null,
+                "price": 0.19
+            },
+            {
+                "name": null,
+                "quantity": null,
+                "price": 0.19
+            },
+            {
+                "name": null,
+                "quantity": null,
+                "price": 0.19
+            },
+            {
+                "name": null,
+                "quantity": null,
+                "price": 0.29
+            },
+            {
+                "name": null,
+                "quantity": null,
+                "price": 0.99
+            },
+            {
+                "name": null,
+                "quantity": null,
+                "price": 0.64
+            }
+        ]
+    },
+    {
+        "seller_name": "MAXIMA LT, UAB",
+        "total_discount": 7.75,
+        "price_without_vat": 12.5,
+        "total": 15.19,
+        "date": "2025-06-26",
+        "payment_method": "CREDIT",
+        "products": [
+            {
+                "name": "Svogūnai",
+                "quantity": null,
+                "price": 3.46
+            },
+            {
+                "name": "Bulvės",
+                "quantity": null,
+                "price": 3.46
+            },
+            {
+                "name": "PLASTMASINĖ ranksluo",
+                "quantity": null,
+                "price": 0.1
+            },
+            {
+                "name": "Kvietinė duona",
+                "quantity": null,
+                "price": 1.8
+            },
+            {
+                "name": "SVIESTAS",
+                "quantity": null,
+                "price": 1.8
+            }
+        ]
+    },
+    {
+        "seller_name": "UAB DEPO DIY LT",
+        "total_discount": 1.36,
+        "price_without_vat": 19.65,
+        "total": 23.78,
+        "date": "2023-08-03",
+        "payment_method": "CREDIT",
+        "products": [
+            {
+                "name": "Daugiabriaunės fanelės",
+                "quantity": 1.98,
+                "price": 2.05
+            },
+            {
+                "name": "Plytelės CISA HDP CKN142,5 / R800 / Rocket 35kg",
+                "quantity": null,
+                "price": 16.2
+            },
+            {
+                "name": "Plytelės DEM 42,5 R / Slimelit 35kg",
+                "quantity": 2.0,
+                "price": 3.79
+            }
+        ]
+    }
+]
