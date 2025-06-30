@@ -1,0 +1,23 @@
+{
+  "is_invoice": true,
+  "invoice_number": "INV-100",  //|null
+  "invoice_date": "11/15/2019",
+  "payment_due_date": "12/15/2019",
+  "vendor_name": "Contoso Headquarters",
+  "customer_name": "MICROSOFT CORPORATION",
+  "currency_code": "USD",
+  "items": [
+    {
+      "name": "Consulting Services",
+      "code": "A123",
+      "quantity": 4,
+      "measurement_unit": "hours", // (default "pcs")
+      "discount": 0.99,
+      "price": 30.45,
+      "vat": 6.04
+    }
+  ],
+  "subtotal": 78.55,
+  "sales_tax": 8.45,
+  "total": 86.95
+}

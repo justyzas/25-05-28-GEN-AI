@@ -41,4 +41,4 @@ print(response.text)
 my_recipes: list[Recipe] = response.parsed
 
 # Pirmojo recepto pavadinimas
-print(my_recipes[0].recipe_name)
+print(my_recipes[0].recipe_nam)
