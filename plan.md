@@ -444,7 +444,6 @@ These points outline various limitations and concerns about using AI agent syste
 - check out how to send emails via python.
 - integrating chatbot with email sending capabilities.
 
-
 # Lecture 21. Practice works.
 
 If LLM thinks it is not invoice, do not process it.
@@ -452,18 +451,21 @@ Invoices should be in order by date
 
 - Schema definition
 - Coding
-  + Connection to LLM (client initialization)
-  + Files reading
-  + Files conversion to bytes
-  + Schema definition in python with pydantic (dont forget to add a field to validate if it is an invoice)
-  + Prompt an llm to answer in structured format
-  + Filter for invoices only
-  + Write invoices to CSV
-  + Filter not invoices
-  + Write non invoice data to CSV
-  + Invoice files transfer to "processed" folder
+
+  - Connection to LLM (client initialization)
+  - Files reading
+  - Files conversion to bytes
+  - Schema definition in python with pydantic (dont forget to add a field to validate if it is an invoice)
+  - Prompt an llm to answer in structured format
+
+  - Filter for invoices only
+  - Write invoices to CSV
+
+  - Filter not invoices
+  - Write non invoice data to CSV
+  - Invoice files transfer to "processed" folder
+
 - Testing
-  + Prompting not with invoices
-  + Different language support
-  + Validation (Human review)
-  
+  - Prompting not with invoices
+  - Different language support
+  - Validation (Human review)

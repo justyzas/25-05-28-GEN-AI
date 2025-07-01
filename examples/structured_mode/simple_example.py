@@ -16,16 +16,17 @@ client = OpenAI(
 )
 
 # Complaint letter recogniser
-# is_complaint: boolean which would tell if a letter was complainatory 
+# is_complaint: boolean which would tell if a letter was complainatory
 # is_refund_request: boolean which would tell if a letter was an inquiry for refund
 # positive_score: a float from 0 to 1 telling how positive the letter was.
 # complaint_tags: string, one or few of the following: "not satisfied", "very disappointed", "complain", "unacceptable","issue", "problem", "angry", "bad experience", "frustrated", "refund", "faulty", "poor service", "doesn't work", "worst"
 
 complaint_keywords = [
-        "not satisfied", "very disappointed", "complain", "unacceptable",
-        "issue", "problem", "angry", "bad experience", "frustrated", "refund",
-        "faulty", "poor service", "doesn't work", "worst"]
-complaint_keywords_with_quotes = [f"\"{keyword}\"" for keyword in complaint_keywords]
+    "not satisfied", "very disappointed", "complain", "unacceptable",
+    "issue", "problem", "angry", "bad experience", "frustrated", "refund",
+    "faulty", "poor service", "doesn't work", "worst"]
+complaint_keywords_with_quotes = [
+    f"\"{keyword}\"" for keyword in complaint_keywords]
 complaint_keywords_list_str = ", ".join(complaint_keywords_with_quotes)
 
 complaint_letter = """Dear Customer Service,
@@ -43,9 +44,9 @@ Sincerely, Jonė
 """
 
 
-class LetterInformation(BaseModel): 
+class LetterInformation(BaseModel):
     """This is a class for analyzing letter content.
-    
+
     This class represents information about a letter, specifically focusing on wheter it is a complant,
     and what type of complaint letter it is. 
     It ingerits from BaseModel to handle data validation and serialization.
