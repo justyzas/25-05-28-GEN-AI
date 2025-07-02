@@ -1,5 +1,6 @@
 
 from schema import InvoiceModel
+import os
 
 
 def write_structured_invoice_output_to_csv(invoices: list[InvoiceModel]):
@@ -18,10 +19,12 @@ def write_structured_invoice_output_to_csv(invoices: list[InvoiceModel]):
         {"local_name": "PVM suma", "model_field_name": "sales_tax"},
         {"local_name": "Suma (Su PVM)", "model_field_name": "total"}]
 
-    first_line = ",".join([column_config["local_name"]
-                          for column_config in columns_config])
-
-    csv_output = first_line
+    csv_output = ""
+    # Jei failas jau egzistuoja, ten nevesti stulpeliu pavadinimu
+    if not os.path.exists("C:/Users/kruti/Desktop/GEN AI/25-05-28-GEN-AI/output.csv"):
+        first_line = ",".join([column_config["local_name"]
+                               for column_config in columns_config])
+        csv_output = first_line
 
     for invoice in invoices:
         # Sugeneruojama saskaitos eilute csv faile
@@ -29,10 +32,15 @@ def write_structured_invoice_output_to_csv(invoices: list[InvoiceModel]):
         invoice_number = invoice.invoice_number
         invoice_date = getattr(invoice, 'invoice_date')
         payment_due_date = getattr(invoice, 'payment_due_date')
-
-        invoice_line = f"\n{invoice_number},{invoice_date},{payment_due_date},{getattr(invoice, 'vendor_name')},{getattr(invoice, 'customer_name')},{getattr(invoice, 'currency_code')},{getattr(invoice, 'subtotal')},{getattr(invoice, 'sales_tax')},{getattr(invoice, 'total')}"
+        vendor_name = invoice.vendor_name
+        customer_name = invoice.customer_name
+        currency_code = invoice.currency_code
+        subtotal = invoice.subtotal
+        sales_tax = invoice.sales_tax
+        total = invoice.total
+        invoice_line = f"\n{invoice_number},{invoice_date},{payment_due_date},{vendor_name},{customer_name},{currency_code},{subtotal},{sales_tax},{total}"
         # prijungiama saskaitos eilute i csv faila
         csv_output += invoice_line
 
-    with open("output.csv", "w", encoding="utf-8-sig") as f:
+    with open("output.csv", "a", encoding="utf-8-sig") as f:
         f.write(csv_output)

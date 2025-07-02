@@ -1,0 +1,68 @@
+[2025-07-02 18:45:30.872813]: Config loaded
+[2025-07-02 18:45:31.768235]: Client initialized
+[2025-07-02 18:45:31.810754]: Files converted to bytes successfully
+[2025-07-02 18:45:31.811053]: Sending request to LLM service
+[2025-07-02 18:46:04.960087]: Got a response from LLM service successfully
+[2025-07-02 18:46:04.960383]: GOT invoices: 2, non-invoices: 1
+[2025-07-02 18:46:04.960593]: Outputting data to CSV...
+[2025-07-02 18:46:04.961097]: CSV Output succesful!
+[2025-07-02 18:46:04.961298]: Transferring files to their directories...
+[2025-07-02 18:46:04.961501]: Transferring {source_path} to {destination_path}
+[2025-07-02 18:46:04.965732]: Transfer succesful!
+[2025-07-02 18:46:04.965955]: Transferring {source_path} to {destination_path}
+[2025-07-02 18:46:04.968053]: Transfer succesful!
+[2025-07-02 18:46:04.968273]: Transferring {source_path} to {destination_path}
+[2025-07-02 18:46:04.970124]: Transfer succesful!
+[2025-07-02 18:46:04.970326]: Program ended it's job!
+[2025-07-02 18:48:43.697572]: Config loaded
+[2025-07-02 18:48:44.607916]: Client initialized
+[2025-07-02 18:48:44.679215]: Files converted to bytes successfully
+[2025-07-02 18:48:44.679581]: Sending request to LLM service
+[2025-07-02 18:49:28.660521]: Got a response from LLM service successfully
+[2025-07-02 18:49:28.660852]: GOT invoices: 6, non-invoices: 1
+[2025-07-02 18:49:28.661080]: Outputting data to CSV...
+[2025-07-02 18:49:28.661695]: CSV Output succesful!
+[2025-07-02 18:49:28.661920]: Transferring files to their directories...
+[2025-07-02 18:49:28.662172]: Transferring C:/Users/kruti/Desktop/GEN AI/25-05-28-GEN-AI/examples/practice_works/data/invoices\CONTOSO.pdf to C:/Users/kruti/Desktop/GEN AI/25-05-28-GEN-AI/examples/practice_works/data/processed\CONTOSO.pdf
+[2025-07-02 18:49:28.666434]: Transfer succesful!
+[2025-07-02 18:49:28.666670]: Transferring C:/Users/kruti/Desktop/GEN AI/25-05-28-GEN-AI/examples/practice_works/data/invoices\document (1).pdf to C:/Users/kruti/Desktop/GEN AI/25-05-28-GEN-AI/examples/practice_works/data/processed\document (1).pdf
+[2025-07-02 18:49:28.669829]: Transfer succesful!
+[2025-07-02 18:49:28.670066]: Transferring C:/Users/kruti/Desktop/GEN AI/25-05-28-GEN-AI/examples/practice_works/data/invoices\document (2).pdf to C:/Users/kruti/Desktop/GEN AI/25-05-28-GEN-AI/examples/practice_works/data/processed\document (2).pdf
+[2025-07-02 18:49:28.672626]: Transfer succesful!
+[2025-07-02 18:49:28.672875]: Transferring C:/Users/kruti/Desktop/GEN AI/25-05-28-GEN-AI/examples/practice_works/data/invoices\document.pdf to C:/Users/kruti/Desktop/GEN AI/25-05-28-GEN-AI/examples/practice_works/data/processed\document.pdf
+[2025-07-02 18:49:28.674940]: Transfer succesful!
+[2025-07-02 18:49:28.675185]: Transferring C:/Users/kruti/Desktop/GEN AI/25-05-28-GEN-AI/examples/practice_works/data/invoices\form-recognizer-demo-sample1.pdf to C:/Users/kruti/Desktop/GEN AI/25-05-28-GEN-AI/examples/practice_works/data/processed\form-recognizer-demo-sample1.pdf
+[2025-07-02 18:49:28.677209]: Transfer succesful!
+[2025-07-02 18:49:28.677428]: Transferring C:/Users/kruti/Desktop/GEN AI/25-05-28-GEN-AI/examples/practice_works/data/invoices\invoice-english.pdf to C:/Users/kruti/Desktop/GEN AI/25-05-28-GEN-AI/examples/practice_works/data/processed\invoice-english.pdf
+[2025-07-02 18:49:28.679660]: Transfer succesful!
+[2025-07-02 18:49:28.679931]: Transferring C:/Users/kruti/Desktop/GEN AI/25-05-28-GEN-AI/examples/practice_works/data/invoices\Invoice_1.pdf to C:/Users/kruti/Desktop/GEN AI/25-05-28-GEN-AI/examples/practice_works/data/other\Invoice_1.pdf
+[2025-07-02 18:49:28.681658]: Transfer succesful!
+[2025-07-02 18:49:28.681884]: Program ended it's job!
+[2025-07-02 18:51:20.399048]: Config loaded
+[2025-07-02 18:51:21.311056]: Client initialized
+[2025-07-02 18:51:21.352446]: Files converted to bytes successfully
+[2025-07-02 18:51:21.352739]: Sending request to LLM service
+[2025-07-02 18:51:30.070056]: Got a response from LLM service successfully
+[2025-07-02 18:51:30.070348]: GOT invoices: 1, non-invoices: 0
+[2025-07-02 18:51:30.070544]: Outputting data to CSV...
+[2025-07-02 18:51:30.071043]: CSV Output succesful!
+[2025-07-02 18:51:30.071250]: Transferring files to their directories...
+[2025-07-02 18:51:30.071462]: Transferring C:/Users/kruti/Desktop/GEN AI/25-05-28-GEN-AI/examples/practice_works/data/invoices\PVM SF pavyzdys.pdf to C:/Users/kruti/Desktop/GEN AI/25-05-28-GEN-AI/examples/practice_works/data/processed\PVM SF pavyzdys.pdf
+[2025-07-02 18:51:30.075699]: Transfer succesful!
+[2025-07-02 18:51:30.075909]: Program ended it's job!
+[2025-07-02 18:55:55.782591]: Config loaded
+[2025-07-02 18:55:56.691162]: Client initialized
+[2025-07-02 18:55:56.735149]: Files converted to bytes successfully
+[2025-07-02 18:55:56.735454]: Sending request to LLM service
+[2025-07-02 18:56:26.878783]: Got a response from LLM service successfully
+[2025-07-02 18:56:26.879077]: GOT invoices: 2, non-invoices: 1
+[2025-07-02 18:56:26.879294]: Outputting data to CSV...
+[2025-07-02 18:56:26.879918]: CSV Output succesful!
+[2025-07-02 18:56:26.880130]: Transferring files to their directories...
+[2025-07-02 18:56:26.880327]: Transferring C:/Users/kruti/Desktop/GEN AI/25-05-28-GEN-AI/examples/practice_works/data/invoices\CONTOSO.pdf to C:/Users/kruti/Desktop/GEN AI/25-05-28-GEN-AI/examples/practice_works/data/processed\CONTOSO.pdf
+[2025-07-02 18:56:26.884683]: Transfer succesful!
+[2025-07-02 18:56:26.884922]: Transferring C:/Users/kruti/Desktop/GEN AI/25-05-28-GEN-AI/examples/practice_works/data/invoices\PVM SF pavyzdys.pdf to C:/Users/kruti/Desktop/GEN AI/25-05-28-GEN-AI/examples/practice_works/data/processed\PVM SF pavyzdys.pdf
+[2025-07-02 18:56:26.887341]: Transfer succesful!
+[2025-07-02 18:56:26.887642]: Transferring C:/Users/kruti/Desktop/GEN AI/25-05-28-GEN-AI/examples/practice_works/data/invoices\Invoice_1.pdf to C:/Users/kruti/Desktop/GEN AI/25-05-28-GEN-AI/examples/practice_works/data/other\Invoice_1.pdf
+[2025-07-02 18:56:26.890150]: Transfer succesful!
+[2025-07-02 18:56:26.890403]: Program ended it's job!

@@ -13,6 +13,7 @@ class ItemModel(BaseModel):
 
 
 class InvoiceModel(BaseModel):
+    original_file_name: str
     is_invoice: bool
     invoice_number: str = Field(
         description="Invoice number. If not present in invoice, use \"\"")
