@@ -13,8 +13,8 @@ def collect_starting_data():
         # Išskaidome produkto teksto eilutę per kablelius
         product_parts = product_str.split(",")
         # Sudarome produckto modelį iš aatskirto produkto teksto per kablelius
-        product = ItemModel(name=product_parts[0], price=float(product_parts[1]), weight=float(
-            product_parts[2]), quantity_in_stock=int(product_parts[3]))
+        product = ItemModel(id=product_parts[0], name=product_parts[1], price=float(product_parts[2]), weight=float(
+            product_parts[3]), quantity_in_stock=int(product_parts[4]))
         # Modelį pridedame prie bendro produktų sąrašo
         product_list.append(product)
     return product_list
