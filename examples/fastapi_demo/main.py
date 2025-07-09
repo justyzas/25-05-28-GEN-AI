@@ -4,6 +4,9 @@ from initializer import collect_starting_data
 from product_registrator import save_product_to_file
 app = FastAPI()
 
+# 1. DB
+# 2. Jupyter
+# 3. Fine-Tuning
 
 # RAM atmintis (Labai laikina)
 products: list[ItemModel] = collect_starting_data()
@@ -12,7 +15,6 @@ products: list[ItemModel] = collect_starting_data()
 # C - Create
 # R - Read
 # U - Update
-
 # D - Delete
 
 # DOCS on status codes: https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Status#informational_responses
@@ -22,8 +24,12 @@ products: list[ItemModel] = collect_starting_data()
 # 4XX - Client side error
 # 5XX - Server side error
 
+# Body (didelis objektas su informacija)
+# Dinaminiai route segmentai
 # Query parameters - parametrai, neįvardinti route segmentuose, tačiau esantys funkcijoje kaip parametrai.
 # /products?page=1
+
+# https://www.w3schools.com/mysql/trymysql.asp?filename=trysql_select_limit_offset
 
 
 @app.get("/products")
@@ -34,6 +40,8 @@ def get_all_products(page: int) -> list[ItemModel]:
 
 # Request body - Užklausos kūnas. Jis privalo būti sudarytas iš modelio (klasės)
 
+# https://www.w3schools.com/sql/sql_insert.asp#gsc.tab=0
+
 
 @app.post("/products", status_code=201)
 def create_new_product(new_product: ItemModel):
@@ -41,8 +49,9 @@ def create_new_product(new_product: ItemModel):
     save_product_to_file(new_product)
     return {"message": "New product was successfully added to your shop! :)"}
 
-
 # Dinaminis route segmentas (parametras)
+
+
 @app.get("/products/{id}")
 def get_single_product(id: int):
     for product in products:
