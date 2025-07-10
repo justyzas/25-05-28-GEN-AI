@@ -1,15 +1,32 @@
 from fastapi import FastAPI, HTTPException
-from models import ItemModel
+from models import ItemModel, ItemCreateModel, ItemUpdateModel
 from initializer import collect_starting_data
 from product_registrator import save_product_to_file
+import sqlite3
+
+# Prisijungimas prie duomenų bazės
+con = sqlite3.connect("tutorial.db")
+cursor = con.cursor()
+
+
+# Sukuria lentelę Products
+cursor.execute("""CREATE TABLE IF NOT EXISTS Products (
+    id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
+    name TEXT,
+    price DECIMAL(10, 2),
+    weight DECIMAL(6, 2),
+    quantity_in_stock INT
+);""")
+
 app = FastAPI()
+
 
 # 1. DB
 # 2. Jupyter
 # 3. Fine-Tuning
 
 # RAM atmintis (Labai laikina)
-products: list[ItemModel] = collect_starting_data()
+# products: list[ItemModel] = collect_starting_data()
 
 # CRUD
 # C - Create
@@ -32,9 +49,17 @@ products: list[ItemModel] = collect_starting_data()
 # https://www.w3schools.com/mysql/trymysql.asp?filename=trysql_select_limit_offset
 
 
-@app.get("/products")
-def get_all_products(page: int) -> list[ItemModel]:
-    return products[(page-1)*5:page*5]
+@app.get("/products")  # Gauti visus produktus
+def get_all_products(page: int = 1, products_per_page: int = 5) -> list[ItemModel]:
+    with sqlite3.connect("tutorial.db") as con:
+        # con.row_factory = sqlite3.Row
+        cursor = con.cursor()
+        cursor.execute(
+            f"""SELECT * FROM Products LIMIT {products_per_page} OFFSET {(page-1)*products_per_page};""")
+        products = cursor.fetchall()
+    products_res = [ItemModel(id=product[0], name=product[1], price=product[2],
+                              weight=product[3], quantity_in_stock=product[4]) for product in products]
+    return products_res
 
 # Įprastai teigiamo atsakymo status code
 
@@ -44,9 +69,11 @@ def get_all_products(page: int) -> list[ItemModel]:
 
 
 @app.post("/products", status_code=201)
-def create_new_product(new_product: ItemModel):
-    products.append(new_product)
-    save_product_to_file(new_product)
+def create_new_product(new_product: ItemCreateModel):
+    with sqlite3.connect("tutorial.db") as con:
+        cursor = con.cursor()
+        cursor.execute(f"""INSERT INTO Products (name, price, weight, quantity_in_stock)
+        VALUES ('{new_product.name}', {new_product.price}, {new_product.weight}, {new_product.quantity_in_stock});""")
     return {"message": "New product was successfully added to your shop! :)"}
 
 # Dinaminis route segmentas (parametras)
@@ -54,32 +81,49 @@ def create_new_product(new_product: ItemModel):
 
 @app.get("/products/{id}")
 def get_single_product(id: int):
-    for product in products:
-        if product.id == id:
-            return product
+    with sqlite3.connect("tutorial.db") as con:
+        # con.row_factory = sqlite3.Row
+        cursor = con.cursor()
+        cursor.execute(
+            f"""SELECT * FROM Products WHERE id = {id};""")
+        products = cursor.fetchall()
+    if len(products) != 0:
+        product = products[0]
+        return ItemModel(id=product[0], name=product[1], price=product[2],
+                         weight=product[3], quantity_in_stock=product[4])
     # Atsakymas su neįprastu status code. (kai nepavyksta apdoroti užklausos)
     raise HTTPException(status_code=404, detail="Product was not found")
 
 
 @app.put("/products/{id}")
-def update_single_product(id: int, updated_product: ItemModel):
-    index = 0
-    for product in products:
-        if product.id == id:
-            products[index] = updated_product
-            return products[index]
-        index += 1
-    raise HTTPException(status_code=404, detail="Product was not found")
+def update_single_product(id: int, updated_product: ItemUpdateModel):
+    with sqlite3.connect("tutorial.db") as con:
+        # con.row_factory = sqlite3.Row
+        cursor = con.cursor()
+        cursor.execute(f"""UPDATE Products
+        SET name = '{updated_product.name}', price = {updated_product.price}, quantity_in_stock = {updated_product.quantity_in_stock}
+        WHERE id = {id};""")
+        # cursor.rowcount atitinka, kiek eilučių buvo paveikta
+        if cursor.rowcount == 0:
+            raise HTTPException(
+                status_code=404, detail="Product was not found")
+        else:
+            return {"message": "Product was successfully updated :)"}
 
 
 @app.delete("/products/{id}", status_code=204)
 def delete_single_product(id: int):
-    for product in products:
-        if product.id == id:
-            products.remove(product)
-            return
-    # Atsakymas su neįprastu status code. (kai nepavyksta apdoroti užklausos)
-    raise HTTPException(status_code=404, detail="Product was not found")
+    with sqlite3.connect("tutorial.db") as con:
+        # con.row_factory = sqlite3.Row
+        cursor = con.cursor()
+        cursor.execute(f"""DELETE from Products
+        WHERE id = {id};""")
+        # cursor.rowcount atitinka, kiek eilučių buvo paveikta
+        if cursor.rowcount == 0:
+            raise HTTPException(
+                status_code=404, detail="Product was not found")
+        else:
+            return {"message": "Product was successfully deleted :)"}
 
 
 @app.get("/json")
