@@ -7,7 +7,7 @@ from rich import print
 
 
 load_dotenv()
-CLASSIFIER_TEXT_LENGTH = 700
+CLASSIFIER_TEXT_LENGTH = 400
 
 TOKEN = os.getenv("OPENAI_API_KEY")
 ENDPOINT = "https://models.github.ai/inference"
@@ -52,4 +52,20 @@ def classify(text: str):
     return response.choices[0].message.parsed.category
 
 
-classify("55. Važiuoti važiuojamąja dalimi dviračiu leidžiama ne jaunesniems kaip 14 metų asmenims, o išklausiusiems Lietuvos Respublikos švietimo, mokslo ir sporto ministerijos nustatytą")
+def classify_question(text: str):
+    response = client.chat.completions.parse(
+        model=MODEL,
+        messages=[
+            {
+                "role": "system",
+                "content": "You are a classificator chatbot, which classifies a question to a certain topic.",
+            },
+            {
+                "role": "user",
+                "content": f"{text[0:CLASSIFIER_TEXT_LENGTH]}...",
+            }
+        ],
+        response_format=ClassifiedTopic
+    )
+
+    return response.choices[0].message.parsed.category

@@ -14,9 +14,11 @@ def test_connection():
 
 
 @app.post("/ingest")
-def ingest_data_to_llm(body: IngestionBodyModel, chunk_size: int, overlap: int):
+def ingest_data_to_llm(body: IngestionBodyModel, chunk_size: int = 500, overlap: int = 100):
     print(body)
+    # Klasifikavimas pagal temą
     category = classify(body.text)
+
     embed_and_store(body, chunk_size=chunk_size,
                     overlap=overlap, topic=category)
-    return "Coming soon..."
+    return {"message": f"Successfully teached a model about {category}"}
