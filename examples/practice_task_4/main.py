@@ -22,3 +22,10 @@ def ingest_data_to_llm(body: IngestionBodyModel, chunk_size: int = 500, overlap:
     embed_and_store(body, chunk_size=chunk_size,
                     overlap=overlap, topic=category)
     return {"message": f"Successfully teached a model about {category}"}
+
+
+
+
+
+
+

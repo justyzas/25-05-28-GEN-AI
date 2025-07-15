@@ -11,6 +11,16 @@ st.set_page_config(page_title="Chatbot", page_icon="🤖")
 
 st.title("🤖 Streamlit Chatbot")
 
+# Add temperature slider in the sidebar
+st.sidebar.title("Chatbot Settings")
+temperature = st.sidebar.slider(
+    "Temperature (creativity)", min_value=0.0, max_value=1.0, value=0.7, step=0.05
+)
+# Add slider for number of relevant texts
+n_results = st.sidebar.slider(
+    "Number of relevant texts", min_value=0, max_value=10, value=5, step=1
+)
+
 # Initialize chat history
 if "chat_history" not in st.session_state:
     st.session_state.chat_history = [
@@ -39,19 +49,20 @@ if user_input:
 
             embedded_question = embed(user_input)
             most_relevant_documents = collection.query(
-                query_embeddings=[embedded_question], n_results=5)
+                query_embeddings=[embedded_question], n_results=n_results)
             most_relevant_texts = most_relevant_documents["documents"][0]
 
             context = [{"role": "user",
                         "content": f"context for answering the previous question/questions: {";".join(most_relevant_texts)}"}]
-            print(context)
+            print(f"temperature: {temperature}")
             response = chatbot.chat.completions.create(
                 model=MODEL,
                 messages=st.session_state.chat_history + context,
+                temperature=temperature,
             )
-            assistant_reply = response.choices[0].message.content
-            st.markdown(assistant_reply)
+            assistant_message = response.choices[0].message.content
+            st.markdown(assistant_message)
 
         # Add assistant response to chat history
         st.session_state.chat_history.append(
-            {"role": "assistant", "content": assistant_reply})
+            {"role": "assistant", "content": assistant_message})
