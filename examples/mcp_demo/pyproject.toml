@@ -5,9 +5,11 @@ description = "Add your description here"
 readme = "README.md"
 requires-python = ">=3.13"
 dependencies = [
+    "ddgs>=9.2.3",
     "httpx>=0.28.1",
     "mcp[cli]>=1.11.0",
     "requests>=2.32.4",
+    "search-engines>=1.0.7",
 ]
 
 [tool.uv.workspace]

@@ -113,5 +113,25 @@ def get_current_weather(location: str):
     return data
 
 
+@mcp.tool()
+def get_weather_forecast(location: str, days: int = 3, aqi: str = "no", alerts: str = "no"):
+    """
+    Forecast weather API method returns, depending upon your price plan level, upto next 14 day weather forecast and weather alert as json or xml. The data is returned as a Forecast Object.
+
+    Forecast object contains astronomy data, day weather forecast and hourly interval weather information for a given city.
+    Parameters:
+        location: (str) Pass US Zipcode, UK Postcode, Canada Postalcode, IP address, Latitude/Longitude (decimal degree) or city name.
+        days: (int) Number of days of weather forecast. Value ranges from 1 to 14
+        aqi: (str) Air Quality Index. Default is "no". Set to "yes" to include Air Quality data in forecast.
+        alerts: (str) Weather alerts. Default is "no". Set to "yes" to include alerts in forecast.
+    """
+    load_dotenv()
+    WEATHER_API_KEY = os.getenv("WEATHER_API_KEY")
+    response = requests.get(
+        f"https://api.weatherapi.com/v1/forecast.json?q={location}&days={days}&alerts={alerts}&aqi={aqi}&tp=24&key={WEATHER_API_KEY}")
+    data = response.json()
+    return data
+
+
 if __name__ == "__main__":
     mcp.run(transport='stdio')
