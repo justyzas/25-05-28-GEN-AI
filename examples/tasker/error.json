@@ -1,0 +1,7 @@
+[
+	{
+		"type": "text",
+		"text": "Error executing tool get_files: <HttpError 400 when requesting https://www.googleapis.com/drive/v3/files?q=name+%3D+%2724-0115990912007.pdf%27&fields=nextPageToken%2C+files%28id%2C+name%2C+webViewLink%2C+mimeType%2C+alternateLink%29&alt=json returned \"Invalid field selection alternateLink\". Details: \"[{'message': 'Invalid field selection alternateLink', 'domain': 'global', 'reason': 'invalidParameter', 'location': 'fields', 'locationType': 'parameter'}]\">",
+		"uuid": "3f8e0a76-d4de-4df2-bb66-199866d7e4e7"
+	}
+]
